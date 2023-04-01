@@ -156,7 +156,7 @@ const getInitialProviders = ({ purest }) => ({
       .request()
       .then(({ body }) => ({
         username: body.screen_name,
-        email: body.email,
+        email: body.email || body.screen_name +"@twitter.localhost",
       }));
   },
   async instagram({ accessToken }) {
